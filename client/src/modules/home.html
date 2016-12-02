@@ -1,0 +1,32 @@
+<template>
+
+  <div class="col-lg-2 input-group marginTop">
+    <span show.bind="!showLogon" click.trigger="showRegister()"  class=" glyphicon glyphicon-arrow-left leftMargin">
+	 </span>
+  </div>
+
+
+  <div class="panel panel-default marginTop">
+    <div class="panel panel-default marginTop lightblue">
+      <div class="panel-body">
+        <div class="col-lg-6">
+          <h1>Welcome to CHIRPS Social Network!</h1>
+        </div>
+      </div>
+      <div class="col-lg-2 pull-right">
+        <img height="100px" width="200px" src="img/chirpLogo.png" />
+      </div>
+    </div>
+  </div>
+
+
+  <div class="marginTop">
+    <compose show.bind="showLogon" view="./components/logon.html"></compose>
+    <compose show.bind="!showLogon" view="./components/register.html"></compose>
+  </div>
+
+
+
+  </h1>
+
+</template>
