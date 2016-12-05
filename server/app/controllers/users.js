@@ -2,10 +2,10 @@ var express = require('express'),
   logger = require('../../config/logger'),
   router = express.Router(),
   mongoose = require('mongoose')
-User = mongoose.model('User')
-Chirp = mongoose.model('Chirp')
-passportService = require('../../config/passport')
-passport = require('passport')
+  User = mongoose.model('User')
+  Chirp = mongoose.model('Chirp')
+  passportService = require('../../config/passport')
+  passport = require('passport')
 
 var requireAuth = passport.authenticate('jwt', { session: false });
 var requireLogin = passport.authenticate('local', { session: false });

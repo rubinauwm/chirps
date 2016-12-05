@@ -3,10 +3,14 @@ var express = require('express'),
 	router = express.Router(),
 	mongoose = require('mongoose'),
 	Chirp = mongoose.model('Chirp');
+	passportService = require('../../config/passport')
+    passport = require('passport')
+
+var requireAuth = passport.authenticate('jwt', { session: false });
+var requireLogin = passport.authenticate('local', { session: false });
 
 module.exports = function (app) {
 	app.use('/api', router);
-
 
 	 router.route('/chirps/followedChirps/:id')
 
