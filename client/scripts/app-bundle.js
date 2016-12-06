@@ -771,7 +771,7 @@ define('resources/data/data-services',['exports', 'aurelia-framework', 'aurelia-
 		}
 
 		DataServices.prototype.get = function get(url) {
-			return this.http.createRequest(url).asGet().withHeader('Authorization', 'JWT' + localStorage.getItem('aurelia_token')).send().then(function (response) {
+			return this.http.createRequest(url).asGet().withHeader('Authorization', 'JWT ' + localStorage.getItem('aurelia_token')).send().then(function (response) {
 				if (!response.isSuccess) {
 					return response;
 				} else {
@@ -784,7 +784,7 @@ define('resources/data/data-services',['exports', 'aurelia-framework', 'aurelia-
 		};
 
 		DataServices.prototype.put = function put(content, url) {
-			return this.http.createRequest(url).asPut().withHeader('Authorization', 'JWT' + localStorage.getItem('aurelia_token')).withContent(content).send().then(function (response) {
+			return this.http.createRequest(url).asPut().withHeader('Authorization', 'JWT ' + localStorage.getItem('aurelia_token')).withContent(content).send().then(function (response) {
 				if (!response.isSuccess) {
 					return response;
 				} else {
@@ -797,7 +797,7 @@ define('resources/data/data-services',['exports', 'aurelia-framework', 'aurelia-
 		};
 
 		DataServices.prototype.post = function post(content, url) {
-			return this.http.createRequest(url).asPost().withHeader('Authorization', 'JWT' + localStorage.getItem('aurelia_token')).withContent(content).send().then(function (response) {
+			return this.http.createRequest(url).asPost().withHeader('Authorization', 'JWT ' + localStorage.getItem('aurelia_token')).withContent(content).send().then(function (response) {
 				if (!response.isSuccess) {
 					return response;
 				} else {
@@ -810,7 +810,7 @@ define('resources/data/data-services',['exports', 'aurelia-framework', 'aurelia-
 		};
 
 		DataServices.prototype.delete = function _delete(url) {
-			return this.http.createRequest(url).asDelete().withHeader('Authorization', 'JWT' + localStorage.getItem('aurelia_token')).send().then(function (response) {
+			return this.http.createRequest(url).asDelete().withHeader('Authorization', 'JWT ' + localStorage.getItem('aurelia_token')).send().then(function (response) {
 				if (!response.isSuccess) {
 					return response;
 				} else {

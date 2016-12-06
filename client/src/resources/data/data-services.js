@@ -19,7 +19,7 @@ export class DataServices {
 	get(url) {
 		return this.http.createRequest(url)
 			.asGet()
-			.withHeader('Authorization','JWT'+ localStorage.getItem('aurelia_token'))
+			.withHeader('Authorization','JWT '+ localStorage.getItem('aurelia_token'))
 			.send()
 			.then(response => {
 				if (!response.isSuccess) {
@@ -36,7 +36,7 @@ export class DataServices {
 	put(content, url) {
 		return this.http.createRequest(url)
 			.asPut()
-			.withHeader('Authorization','JWT'+ localStorage.getItem('aurelia_token'))
+			.withHeader('Authorization','JWT '+ localStorage.getItem('aurelia_token'))
 			.withContent(content)
 			.send()
 			.then(response => {
@@ -54,7 +54,7 @@ export class DataServices {
 	post(content, url) {
 		return this.http.createRequest(url)
 			.asPost()
-			.withHeader('Authorization','JWT'+ localStorage.getItem('aurelia_token'))
+			.withHeader('Authorization','JWT '+ localStorage.getItem('aurelia_token'))
 			.withContent(content)
 			.send()
 			.then(response => {
@@ -72,7 +72,7 @@ export class DataServices {
 	delete(url) {
 		return this.http.createRequest(url)
 			.asDelete()
-			.withHeader('Authorization','JWT'+localStorage.getItem('aurelia_token'))
+			.withHeader('Authorization','JWT '+localStorage.getItem('aurelia_token'))
 			.send()
 			.then(response => {
 				if (!response.isSuccess) {
